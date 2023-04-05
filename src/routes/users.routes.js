@@ -20,12 +20,12 @@ const initUsersRoutes = (app, sm) => {
   );
 
   router.post(
-    "https://quizzeo-back.vercel.app/sign-up",
+    "https://quizzeo-back.vercel.app/users/sign-up",
     sm,
     UserController.signUp
   );
   router.post(
-    "https://quizzeo-back.vercel.app/sign-in",
+    "https://quizzeo-back.vercel.app/users/sign-in",
     sm,
     UserController.signIn
   );
