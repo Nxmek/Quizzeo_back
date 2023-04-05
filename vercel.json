@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "Quizzeo",
+  "builds": [{ "src": "src/index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "src/routes/router.js", "dest": "src/index.js" }]
+}
