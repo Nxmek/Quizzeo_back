@@ -8,6 +8,10 @@ const initMiddlewares = (app) => {
 
   const corsOptions = {
     origin: corsOrigin,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+    maxAge: 3600,
   };
 
   app.use(cors(corsOptions));
