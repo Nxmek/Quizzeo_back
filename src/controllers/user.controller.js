@@ -8,9 +8,7 @@ import { stringIsFilled } from "../utils/string.utils.js";
 const signUp = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  app.get("/sign-up", (req, res) => {
-    res.send("ca marche ! ");
-  });
+  res.send("ca marche ! ");
 
   if (!emailIsValid(email.toLowerCase())) {
     return res.status(400).json({ message: "invalid_email" });
@@ -30,9 +28,8 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  app.get("/sign-in", (req, res) => {
-    res.send("ca marche ! ");
-  });
+
+  res.send("ca marche ! ");
 
   if (!stringIsFilled(email) || !stringIsFilled(password)) {
     return res
