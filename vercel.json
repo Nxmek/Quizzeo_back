@@ -3,9 +3,5 @@
   "name": "Quizzeo",
   "builds": [{ "src": "/src/index.js", "use": "@vercel/node" }],
   "rewrites": [{ "source": "/api/(.*)", "destination": "/" }],
-  "routes": [
-    { "src": "/question(.*)", "dest": "../src/routes/questions.routes.js" },
-    { "src": "/users(.*)", "dest": "../src/routes/users.routes.js" },
-    { "src": "/(.*)", "dest": "/src/index.js" }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/src/index.js" }]
 }
