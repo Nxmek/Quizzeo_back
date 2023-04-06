@@ -9,7 +9,6 @@ const signUp = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.send("ca marche ! ");
 
   if (!emailIsValid(email.toLowerCase())) {
     return res.status(400).json({ message: "invalid_email" });
