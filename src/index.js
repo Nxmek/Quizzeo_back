@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 1960; //va chercher port dans le fichier env.dev et si il ne le trouve pas utilise le port 5001
 
 app.get("/", (req, res) => {
-  res.send("ok");
+  res.send("ca marche ! ");
 });
 initDb();
 initMiddlewares(app);
