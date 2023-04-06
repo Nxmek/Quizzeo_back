@@ -27,6 +27,9 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  app.get("/sign-in", (req, res) => {
+    res.send("ca marche ! ");
+  });
 
   if (!stringIsFilled(email) || !stringIsFilled(password)) {
     return res
