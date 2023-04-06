@@ -6,7 +6,8 @@
   "scripts": {
     "dev_old": "nodemon src/index.js",
     "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=./.env.dev",
-    "prod": "node -r dotenv/config src/index.js dotenv_config_path=./.env.prod"
+    "prod": "node -r dotenv/config src/index.js dotenv_config_path=./.env.prod",
+    "start": "node -r dotenv/config src/index.js dotenv_config_path=./.env.prod"
   },
   "dependencies": {
     "cors": "^2.8.5",
