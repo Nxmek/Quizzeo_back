@@ -8,6 +8,7 @@ import { stringIsFilled } from "../utils/string.utils.js";
 const signUp = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send("ca marche ! ");
 
   if (!emailIsValid(email.toLowerCase())) {
@@ -29,7 +30,7 @@ const signIn = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  res.send("ca marche ! ");
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
   if (!stringIsFilled(email) || !stringIsFilled(password)) {
     return res
@@ -56,7 +57,7 @@ const signIn = async (req, res) => {
 const read = async (req, res) => {
   const users = await UserDAO.readAll();
   if (!users) return res.status(400).json({ message: `can't retrieve users` });
-  res.status(200).json({ users });
+  res.header("Access-Control-Allow-Origin", "*").status(200).json({ users });
 };
 
 const readUserById = async (req, res) => {
@@ -69,11 +70,13 @@ const readUserById = async (req, res) => {
   if (!readingUser)
     return res.status(400).json({ message: `cannot_read_user` });
 
+  res.set("Access-Control-Allow-Origin", "*");
   res.status(200).json({
     message: `user with id ${user_id} was successfully read`,
     user: readingUser,
   });
 };
+
 // const getUserInfos = async (req, res) => {
 //   const { userId } = req.body;
 //   const user = await UserDAO.readById(userId);
